@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  email: "",
   password: "",
+  emailOrUsername: "",
 };
 
-const authSlice = createSlice({
+const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
@@ -17,5 +17,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { onChangeUserCredentials } = authSlice?.actions;
-export const authReducer = authSlice.reducer;
+export const { onChangeUserCredentials } = userSlice?.actions;
+export const userReducer = userSlice.reducer;
