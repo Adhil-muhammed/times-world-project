@@ -1,4 +1,5 @@
 import React from "react";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa"; // Import icons
 
 export const Slider = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -40,22 +41,16 @@ export const Slider = () => {
             alt={`Slide ${currentIndex + 1}`}
           />
         </div>
-        <button className="prev" onClick={prevSlide}>
-          ❮
-        </button>
-        <button className="next" onClick={nextSlide}>
-          ❯
-        </button>
+        <FaArrowLeft className="prev" size={35} onClick={prevSlide} />
+        <FaArrowRight className="next" size={35} onClick={nextSlide} />
         <div className="dots">
-          {slides.map((slide, index) => {
-            return (
-              <span
-                key={slide.id}
-                className={`dot ${currentIndex === index ? "active" : ""}`}
-                onClick={() => goToSlide(index)}
-              ></span>
-            );
-          })}
+          {slides.map((slide, index) => (
+            <span
+              key={slide.id}
+              className={`dot ${currentIndex === index ? "active-slide" : ""}`}
+              onClick={() => goToSlide(index)}
+            ></span>
+          ))}
         </div>
       </div>
     </>
