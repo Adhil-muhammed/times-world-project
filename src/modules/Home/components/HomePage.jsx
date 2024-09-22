@@ -8,6 +8,7 @@ import {
   useCountryQuery,
   useGetWindowSize,
 } from "..";
+import { SignInWith } from "shared";
 
 export const HomePage = () => {
   const { isLoading } = useCountryQuery({
@@ -25,6 +26,7 @@ export const HomePage = () => {
       <Header />
       <Slider />
       <ContryList />
+      <SignInWith isShow={true} />
     </Container>
   );
 };

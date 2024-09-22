@@ -1,4 +1,5 @@
 import React from "react";
+import { SignInWith } from "shared";
 import { useHandleUserData } from "..";
 import { loginRightSection } from "assets";
 import { Form, Col, Button, FloatingLabel } from "react-bootstrap";
@@ -104,20 +105,7 @@ export const SignIn = () => {
               <div className="line-with-label my-4">
                 <span>or sign in with</span>
               </div>
-              <div className="d-flex align-items-center justify-content-center">
-                <div className="social-icon">
-                  <FaGoogle />
-                </div>
-                <div className="social-icon">
-                  <FaFacebook />
-                </div>
-                <div className="social-icon">
-                  <FaLinkedin />
-                </div>
-                <div className="social-icon">
-                  <FaTwitter />
-                </div>
-              </div>
+              <SignInWith />
             </Col>
             <Col xm={12} md={6} className="d-none d-md-block">
               <img src={loginRightSection} alt="image" />
