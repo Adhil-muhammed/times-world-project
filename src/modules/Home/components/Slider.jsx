@@ -7,8 +7,6 @@ export const Slider = () => {
   const countryState = useSelector((state) => state?.country);
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  console.log("countryState?.data: ", countryState?.data);
-
   const slides = [
     { id: 1, url: "https://flagcdn.com/ax.svg" },
     { id: 2, url: "https://via.placeholder.com/600x300?text=Slide+2" },
@@ -83,6 +81,7 @@ export const Slider = () => {
         </Col>
         <Col sm={12} md={2}>
           <img
+            style={{ height: "100%" }}
             src={countryState?.data[40]?.flag}
             alt={`Slide ${currentIndex + 1}`}
             className="img-fluid"
