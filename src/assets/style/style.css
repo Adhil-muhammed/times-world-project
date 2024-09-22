@@ -46,6 +46,25 @@ body {
   position: relative;
 }
 
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .line-with-label.home::before {
+    top: 0px;
+    width: 100%;
+  }
+
+  .line-with-label.home::after {
+    top: 45px;
+    width: 100%;
+  }
+
+  .line-with-label span {
+    margin: 0 10px;
+    padding: 0;
+    background: transparent;
+  }
+}
+
 /* line-label */
 
 /* SocialIcons.css */
