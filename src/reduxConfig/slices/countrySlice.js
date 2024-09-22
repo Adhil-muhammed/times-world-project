@@ -1,23 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCountryList } from "..";
+import { fetchCountryList } from "./api.slice";
 
-const initialStater = {
+const initialState = {
   data: [],
-  isLoading: false,
   error: null,
+  filterKey: "",
+  isLoading: true,
+  visibleItemsCount: 12,
 };
 
 const countrySlice = createSlice({
   name: "country",
-  initialStater,
+  initialState,
   reducers: {
-    countryWiseFilter: (state, action) => {
-      console.log("action: ", action);
+    setCountryData: (state, action) => {
+      const { data, isLoading } = action?.payload;
+
+      state.data = data;
+      state.isLoading = isLoading;
+    },
+    showMore: (state) => {
+      state.visibleItemsCount = state?.data?.length;
+    },
+    setFilterKey: (state, action) => {
+      state.filterKey = action?.payload?.filterKey;
+      state.visibleItemsCount = 12;
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCountryList.pending, (state) => {
+      .addCase(fetchCountryList.pending, (state, action) => {
         state.isLoading = true;
         state.error = null;
       })
@@ -31,5 +43,6 @@ const countrySlice = createSlice({
   },
 });
 
-export const { countryWiseFilter } = countrySlice?.actions;
+export const { setCountryData, setFilterKey, showMore } = countrySlice?.actions;
+
 export const countryReducer = countrySlice?.reducer;

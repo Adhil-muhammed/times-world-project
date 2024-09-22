@@ -1,11 +1,17 @@
 import React from "react";
-import { Header, Slider } from ".";
+import { Container } from "react-bootstrap";
+import { Header, Slider, ContryList, useCountryQuery } from "..";
 
 export const HomePage = () => {
+  useCountryQuery({
+    enabled: true,
+  });
+
   return (
-    <div>
+    <Container className="cotainer">
       <Header />
       <Slider />
-    </div>
+      <ContryList />
+    </Container>
   );
 };
