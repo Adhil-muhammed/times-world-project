@@ -1,10 +1,11 @@
 import React from "react";
-import { Header } from ".";
+import { Header, Slider } from ".";
 
 export const HomePage = () => {
   return (
     <div>
       <Header />
+      <Slider />
     </div>
   );
 };

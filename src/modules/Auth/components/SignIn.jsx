@@ -100,10 +100,7 @@ export const SignIn = () => {
                   }
                 />
               </Form.Group>
-
-              <Button type="submit" className="w-100">
-                Sign In
-              </Button>
+              <Button type="submit">Sign In</Button>
               <div className="line-with-label my-4">
                 <span>or sign in with</span>
               </div>
