@@ -6,12 +6,12 @@ import { useSelector, useDispatch } from "react-redux";
 
 export const useCountryQuery = ({ enabled }) => {
   const dispatch = useDispatch();
-  const countryState = useSelector((state) => state?.country);
-  const { data, filterKey, visibleItemsCount } = countryState;
+  // const countryState = useSelector((state) => state?.country);
+  // const { data, filterKey, visibleItemsCount } = countryState;
 
-  const filteredCountry = data?.filter((data) => {
-    return filterKey ? data?.region === filterKey : true;
-  });
+  // const filteredCountry = data?.filter((data) => {
+  //   return filterKey ? data?.region === filterKey : true;
+  // });
 
   const fetchCountryList = async () => {
     const res = await axios.get(
@@ -37,5 +37,5 @@ export const useCountryQuery = ({ enabled }) => {
     }
   }, [countryQuery.data]);
 
-  return { filteredCountry, visibleItemsCount };
+  return { isLoading: countryQuery?.isLoading };
 };

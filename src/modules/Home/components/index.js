@@ -1,4 +1,5 @@
 export * from "./Header";
 export * from "./Slider";
-export * from "./ContryList";
+export * from "./Loader";
 export * from "./HomePage";
+export * from "./ContryList";

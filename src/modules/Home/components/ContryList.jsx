@@ -1,8 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { showMore } from "reduxConfig";
+import { useSelector, useDispatch } from "react-redux";
 import { Card, Row, Col, Button } from "react-bootstrap";
 
 export const ContryList = () => {
+  const dispatch = useDispatch();
   const countryState = useSelector((state) => state?.country);
   const { data, filterKey, visibleItemsCount } = countryState;
 
@@ -40,7 +42,11 @@ export const ContryList = () => {
         })}
       </Row>
       <div className="d-flex justify-content-center mt-3">
-        <Button onClick={() => dispatch(showMore())}>Load more</Button>
+        <Button onClick={() => dispatch(showMore())}>
+          {visibleItemsCount === 12 || visibleItemsCount === 8
+            ? "Load more"
+            : "Show less"}
+        </Button>
       </div>
     </div>
   );

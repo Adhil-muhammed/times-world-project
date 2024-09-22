@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Navbar, Nav } from "react-bootstrap";
-import { showMore, setFilterKey } from "reduxConfig";
+import { setFilterKey } from "reduxConfig";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -46,7 +46,6 @@ export const Header = () => {
             Europe
           </Nav.Link>
         </Nav>
-        <button>Show More</button>
       </Navbar.Collapse>
     </Navbar>
   );
